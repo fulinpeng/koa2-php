@@ -10,6 +10,12 @@ const indexController = {
             })
         }
     },
+    initnum(){
+        return async (ctx, next) => {
+            const indexMode_=new indexModel();
+            ctx.body = await indexMode_.initnum();
+        }
+    },
     addition(){
         return async (ctx, next) => {
             const indexMode_=new indexModel();

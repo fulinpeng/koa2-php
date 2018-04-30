@@ -23,6 +23,23 @@ var indexModel = function () {
     }
 
     _createClass(indexModel, [{
+        key: 'initnum',
+        value: function initnum() {
+            return new Promise(function (reselve, reject) {
+                (0, _requestPromise2.default)({
+                    uri: 'http://localhost:8888/practice/conmysql/initnum.php',
+                    method: 'GET'
+                }).then(function (data) {
+                    var result = JSON.parse(data);
+                    if (data) {
+                        reselve(result);
+                    } else {
+                        reject({});
+                    }
+                });
+            });
+        }
+    }, {
         key: 'addition',
         value: function addition() {
             return new Promise(function (reselve, reject) {

@@ -12,6 +12,6 @@
     target: thumbBox.get(0),
     showNum: showNum.get(0)
   });
-  thumb2.addThumb();
+  thumb2.initnum();
   thumb2.addClick();
 })($);

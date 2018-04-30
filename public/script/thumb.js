@@ -18,6 +18,19 @@ class PraiseButton {
     this.showNum.innerHTML = "赞：" + this.num + "次";
     this.addition();
   }
+  initnum() {
+    const _this=this;
+    axios
+      .get("/index/initnum")
+      .then(function(res) {
+        console.log(res);
+        _this.num=res.data.rows[0].num;
+        _this.addThumb();
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
+  }
   addition() {
     axios
       .get("/index/addition")
@@ -35,6 +48,7 @@ class Thumb extends PraiseButton {
     super({ target, showNum });
   }
   addThumb() {
+    console.log(this.num);
     const thumbHtml = `
                 <div class="red1"></div>
                 <div class="red2">

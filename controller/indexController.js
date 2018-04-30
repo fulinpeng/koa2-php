@@ -46,7 +46,7 @@ var indexController = {
             };
         }();
     },
-    addition: function addition() {
+    initnum: function initnum() {
         var _this2 = this;
 
         return function () {
@@ -58,7 +58,7 @@ var indexController = {
                             case 0:
                                 indexMode_ = new _indexModel2.default();
                                 _context2.next = 3;
-                                return indexMode_.addition();
+                                return indexMode_.initnum();
 
                             case 3:
                                 ctx.body = _context2.sent;
@@ -73,6 +73,36 @@ var indexController = {
 
             return function (_x3, _x4) {
                 return _ref2.apply(this, arguments);
+            };
+        }();
+    },
+    addition: function addition() {
+        var _this3 = this;
+
+        return function () {
+            var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(ctx, next) {
+                var indexMode_;
+                return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                    while (1) {
+                        switch (_context3.prev = _context3.next) {
+                            case 0:
+                                indexMode_ = new _indexModel2.default();
+                                _context3.next = 3;
+                                return indexMode_.addition();
+
+                            case 3:
+                                ctx.body = _context3.sent;
+
+                            case 4:
+                            case 'end':
+                                return _context3.stop();
+                        }
+                    }
+                }, _callee3, _this3);
+            }));
+
+            return function (_x5, _x6) {
+                return _ref3.apply(this, arguments);
             };
         }();
     }
