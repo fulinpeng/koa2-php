@@ -2,12 +2,16 @@
  * Created by flp on 2018/4/14.
  */
 
-document.onclick=function () {
-    axios.get('/index/addition')
-        .then(function(res) {
-            console.log(res.data);
-        })
-        .catch(function(err) {
-            console.log(err);
-        });
-};
+~(function($) {
+  var thumbBox = $(".thumbBox"),
+    showNum = $(".showNum");
+  $.fn.extend({
+    thumb: Thumb
+  });
+  var thumb2 = new thumbBox.thumb({
+    target: thumbBox.get(0),
+    showNum: showNum.get(0)
+  });
+  thumb2.addThumb();
+  thumb2.addClick();
+})($);
